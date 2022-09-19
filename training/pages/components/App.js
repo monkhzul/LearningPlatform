@@ -4,7 +4,7 @@ import Content from './Content'
 import Footer from './Footer'
 import Header from './Header'
 import { useRouter } from 'next/router'
-import { BrowserRouter as Router, Switch, Route } from 'next/router'
+import { Route } from 'next/dist/server/router'
 
 export default function App() {
   const router = useRouter()
