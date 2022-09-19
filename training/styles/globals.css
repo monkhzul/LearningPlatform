@@ -30,7 +30,7 @@ a {
 @tailwind utilities;
 
 
-form {
+.login form {
   margin: auto;
   padding: 3rem 2rem;
   border-radius: 1rem;
@@ -58,7 +58,7 @@ input, .button {
  * Inputs
  */
 
-input {
+.login input {
   margin-bottom: 22px;
   background: #eee;
   padding-left: 56px;
@@ -114,4 +114,8 @@ input:focus {
   inset: 0px auto auto 0px; 
   margin: 0px; 
   transform: translate(0px, 510px);
+}
+
+#navbarScroll .navMenu > * {
+  margin: 0 2rem;
 }

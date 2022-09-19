@@ -3,6 +3,9 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Login from './components/Login'
 import mcs from '../images/mcs.jpg'
+import Footer from './components/Footer'
+import App from './components/App'
+import Header from './components/Header'
 
 export default function Home() {
   return (
@@ -24,23 +27,7 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://mcs.mn/mn/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className='font-semibold'
-        >
-          Learning Platform{' '}
-          <span className={`${styles.logo} flex items-center`}>
-          <Image
-            src={mcs}
-            width={120}
-            height={50}
-          />
-          </span>
-        </a>
-      </footer>
+      <Footer />
       <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
     </div>
   )

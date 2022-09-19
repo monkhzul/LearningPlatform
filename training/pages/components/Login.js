@@ -8,10 +8,10 @@ export default function Login() {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        router.push('/components/Home')
+        router.push('/components/App')
     }
   return (
-    <div className='w-full md:w-1/2 xl:w-1/3'>
+    <div className='w-full md:w-1/2 xl:w-1/3 login'>
         <form action="" >
             <h1 className='text-gray-100 font-semibold mx-auto text-center mb-8 text-xl'>Нэвтрэх хэсэг</h1>
             <input type="text" name="" id="username" placeholder='Username'/>
