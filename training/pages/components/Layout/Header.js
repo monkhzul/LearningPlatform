@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import styles from '../../styles/Home.module.css'
-import user from '../../images/svg/user.svg'
+import styles from '../../../styles/Home.module.css'
+import user from '../../../images/svg/user.svg'
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -12,8 +12,9 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 export default function Header() {
+    
   return (
-    <header>
+    <header className="z-10">
                 <div className='border flex justify-between flex-col-reverse sm:flex-row'>
                     <Form className="d-flex my-2 mx-5">
                         <Form.Control
@@ -22,7 +23,7 @@ export default function Header() {
                             className="me-2"
                             aria-label="Search"
                         />
-                        <Button variant="outline-success">Search</Button>
+                        <div className="border-2 px-3 text-center flex items-center rounded-md hover:bg-[#2e3977] hover:text-gray-100">Search</div>
                     </Form>
                     <Dropdown>
                         <Dropdown.Toggle id="dropdown-button-dark-example1" variant="" className='mx-5'>

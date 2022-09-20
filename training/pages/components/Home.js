@@ -1,18 +1,16 @@
 import React from 'react'
 import Head from 'next/head'
-import Footer from './Footer'
+import Layout from './Layout/Layout'
 
 export default function Home() {
     return (
-        <div>
+        <Layout>
             <Head>
                 <title>Home</title>
             </Head>
 
-            <body>
-                
-            </body>
+                <h2>Home Page</h2>
 
-        </div>
+        </Layout>
     )
 }

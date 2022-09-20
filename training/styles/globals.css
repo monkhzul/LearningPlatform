@@ -119,3 +119,41 @@ input:focus {
 #navbarScroll .navMenu > * {
   margin: 0 2rem;
 }
+
+
+ /* Pagination style */
+
+ .page {
+  width: 100%;
+}
+ul.paginationBttns {
+  padding-left: 0;
+}
+.paginationBttns {
+  width: 100%;
+  margin-top: 5%;
+  list-style: none;
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center !important;
+}
+.paginationBttns a {
+  padding: 5px 10px;
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #841f47;
+  color: #841f47 !important;
+  cursor: pointer;
+  text-decoration: none;
+}
+.paginationBttns li {
+  margin-top: 5%;
+}
+.paginationBttns a:hover {
+  color: white !important;
+  background-color: #841f47;
+}
+.paginationActive a {
+  color: white !important;
+  background-color: #841f47;
+}

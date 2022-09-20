@@ -8,7 +8,7 @@ export default function Login() {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        router.push('/components/App')
+        router.push('/components/Home')
     }
   return (
     <div className='w-full md:w-1/2 xl:w-1/3 login'>
