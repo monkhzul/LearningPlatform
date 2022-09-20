@@ -44,7 +44,7 @@ export default function Header() {
                 <div className='user w-full'>
                     <Navbar bg="light" expand="md">
                         <Container fluid>
-                            <Navbar.Brand href="/components/Home" className='mx-5 font-semibold'>М-Си-Эс Академи</Navbar.Brand>
+                            <Navbar.Brand href="/components/Home" className='mx-5 font-bold'>М-Си-Эс Академи</Navbar.Brand>
                             <Navbar.Toggle aria-controls="navbarScroll" />
                             <Navbar.Collapse id="navbarScroll">
                                 <Nav
@@ -53,8 +53,8 @@ export default function Header() {
                                 >
                                     <NavDropdown title="Бидний тухай" id="navbarScrollingDropdown">
                                         <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                                        <NavDropdown.Item href="#action4">
-                                            Another action
+                                        <NavDropdown.Item href="/components/About/Principles">
+                                            Үнэт зүйл, Баритмлах зарчим
                                         </NavDropdown.Item>
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item href="#action5">

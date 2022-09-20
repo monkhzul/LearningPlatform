@@ -37,11 +37,9 @@
 }
 .courseContent {
     display: flex;
-    align-items: center;
 }
 .category {
     height: 100vh;
-    width: 100vw;
     overflow: auto;
 }
 @media (max-width: 640px) {
@@ -73,7 +71,7 @@
         width: 30%;
     }
 }
-@media (min-width: 1281px) {
+@media (min-width: 1280px) {
     .cardBody {
         width: 22%;
     }
@@ -83,10 +81,22 @@
     .category {
         height: 100vh;
         overflow: auto;
+        max-width: 20vw;
     }
 }
+@media (min-width: 1792px) {
+    .category {
+        height: 80vh;
+        overflow: auto;
+        max-width: 20vw;
+    }
+}
+
 @media (min-width: 2560px) {
     .cardBody {
         width: 18%;
+    }
+    .category {
+        height: 50vh;
     }
 }

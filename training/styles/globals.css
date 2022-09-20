@@ -34,7 +34,8 @@ a {
   margin: auto;
   padding: 3rem 2rem;
   border-radius: 1rem;
-  background: #4e545a;
+  background: #2e3977;
+  opacity: 0.9;
 }
 
 /**
@@ -82,10 +83,10 @@ input:hover {
   background-color: rgb(244, 244, 244);
 }
 
-input:focus {
-  border-left: 3px solid #b44e2d;
-  outline: none;
+input[type=password]:focus, input[type=text]:focus {
+  border-left: 5px solid #841f47 !important;
   background-color: #fff;
+  --tw-ring-color: none !important;
 }
 
 /**
@@ -93,19 +94,20 @@ input:focus {
  */
 
 .button {
-  background-color: #b94637;
+  background-color: #841f47;
   color: #fff;
   cursor: pointer;
   width: 50%;
 }
 
 .button:hover, .button:focus {
-  background-color: #d67669;
+  background-color: #841f47;
   outline: none;
+  opacity: 0.6;
 }
 
 .button:active  {
-  background-color: #b94637;
+  background-color: #841f47;
   opacity: .7;
 }
 
@@ -156,4 +158,24 @@ ul.paginationBttns {
 .paginationActive a {
   color: white !important;
   background-color: #841f47;
+}
+
+input[type=checkbox] {
+  border: 2px solid #841f47;
+}
+input[type=checkbox]:checked {
+  background-color: #841f47;
+}
+input[type=checkbox]:focus {
+  --tw-ring-color: none
+}
+.navbar-brand {
+  color: #2e3977 !important;
+}
+.btn {
+  color: #2e3977 !important;
+  font-weight: 600 !important;
+}
+.nav-link {
+  color: #2e3977 !important;
 }

@@ -10,7 +10,7 @@ import ReactPaginate from "react-paginate";
 export default function Courses(props) {
     const [data, setData] = useState(props.db.products);
     const [pageNumber, setPageNumber] = useState(0);
-    const perPage = 10;
+    const perPage = 8;
     const pagesVisited = pageNumber * perPage;
     const pageCount = Math.ceil(data.length / perPage);
 
@@ -37,23 +37,22 @@ export default function Courses(props) {
                 <title>Courses</title>
             </Head>
 
-            <div className="courses ">
-                <h5 className="flex justify-center my-2 text-[#2e3977]">Сургалтууд</h5>
-            </div>
-
-        <div className={`${course.courseContent} flex p-3 my-5`}>
-            <div className={`border p-1 ${course.category}`}>
+        <div className={`${course.courseContent} flex p-3`}>
+            <div className={`border rounded-md p-1 ${course.category}`}>
                <fieldset className="flex flex-row flex-wrap overflow-auto">
-               <legend>Choose your interests</legend>
+               <legend className="text-[#2e3977] flex justify-center text-lg">Choose category</legend>
                 {data.map((data) => 
-               <>
+               <div className="w-full pl-5 sm:w-1/2 md:w-1/3 xl:w-full">
                  <input type="checkbox" id="coding" name="interest" value="coding" />
-                 <label for="coding">{data.title}</label>
-               </>
+                 <label for="coding" className="mx-2">{data.title}</label>
+               </div>
                )}
              </fieldset>
             </div>
-            <div className="">
+            <div className={`flex flex-col ${course.Courses}`}>
+            <div className="courses">
+                <h5 className="flex justify-center text-[#2e3977] my-3">Сургалтууд</h5>
+            </div>
             <div className={`${course.cards}`}>
                 {display}
             </div>
@@ -70,6 +69,8 @@ export default function Courses(props) {
             />
             </div>
         </div>
+
+        
         </Layout>
     )
 }
