@@ -16,6 +16,7 @@ export default function Principles() {
     <Layout>
         <Head>
             <title>Үнэт зүйл, Баримтлах зарчим</title>
+            <link rel="icon" href="/mcsstar.png" />
         </Head>
 
         <h5 className='p-2 border-b text-center my-4'>Үнэт зүйлс</h5>
@@ -33,7 +34,7 @@ export default function Principles() {
                 </div>
                 <div className="pl-5 flex flex-col justify-center leading-tight text-sm">
                     <h5>Мэргэшсэн өндөр чадавхи</h5>
-                    <p>Мэргэжлийн өндөр ур чадвартай, өөрийгөө болон бусдыг байнга хөгжүүлдэг</p>
+                    <p className='text-gray-500 font-s'>Мэргэжлийн өндөр ур чадвартай, өөрийгөө болон бусдыг байнга хөгжүүлдэг</p>
                 </div>
             </div>
 

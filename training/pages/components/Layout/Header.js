@@ -15,8 +15,8 @@ export default function Header() {
     
   return (
     <header className="z-10">
-                <div className='border flex justify-between flex-col-reverse sm:flex-row'>
-                    <Form className="d-flex my-2 mx-5">
+                <div className='flex justify-between flex-col-reverse sm:flex-row my-2'>
+                    <Form className="d-flex mx-5">
                         <Form.Control
                             type="search"
                             placeholder="Search"
@@ -26,11 +26,11 @@ export default function Header() {
                         <div className="border-2 px-3 text-center flex items-center rounded-md hover:bg-[#2e3977] hover:text-gray-100">Search</div>
                     </Form>
                     <Dropdown>
-                        <Dropdown.Toggle id="dropdown-button-dark-example1" variant="" className='mx-5'>
+                        <Dropdown.Toggle id="dropdown-button-dark-example1" className='mx-5'>
                             UserName
                         </Dropdown.Toggle>
 
-                        <Dropdown.Menu variant="dark">
+                        <Dropdown.Menu variant="">
                             <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
                             <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
                             <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
@@ -40,9 +40,8 @@ export default function Header() {
                     </Dropdown>
                 </div>
 
-
                 <div className='user w-full'>
-                    <Navbar bg="light" expand="md">
+                    <Navbar bg="dark" expand="md">
                         <Container fluid>
                             <Navbar.Brand href="/components/Home" className='mx-5 font-bold'>М-Си-Эс Академи</Navbar.Brand>
                             <Navbar.Toggle aria-controls="navbarScroll" />
@@ -51,7 +50,7 @@ export default function Header() {
                                     className="me-auto my-2 my-lg-0 w-full flex justify-center text-lg flex-wrap navMenu"
                                     navbarScroll
                                 >
-                                    <NavDropdown title="Бидний тухай" id="navbarScrollingDropdown">
+                                    <NavDropdown title="Бидний тухай" id="navbarScrollingDropdown" menuVariant="dark">
                                         <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                                         <NavDropdown.Item href="/components/About/Principles">
                                             Үнэт зүйл, Баритмлах зарчим
@@ -61,7 +60,7 @@ export default function Header() {
                                             Something else here
                                         </NavDropdown.Item>
                                     </NavDropdown>
-                                    <NavDropdown title="Сургалтын мэдээлэл" id="navbarScrollingDropdown">
+                                    <NavDropdown title="Сургалтын мэдээлэл" id="navbarScrollingDropdown" menuVariant="dark">
                                         <NavDropdown.Item href="/components/Courses/Courses">Сургалтууд</NavDropdown.Item>
                                         <NavDropdown.Item href="#action4">
                                             Сургалтын хуваарь
@@ -72,7 +71,7 @@ export default function Header() {
                                         </NavDropdown.Item>
                                     </NavDropdown>
                                     <Nav.Link href="#action1">Хөтөлбөрүүд</Nav.Link>
-                                    <NavDropdown title="Миний сургалтууд" id="navbarScrollingDropdown">
+                                    <NavDropdown title="Миний сургалтууд" id="navbarScrollingDropdown" menuVariant="dark">
                                         <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
                                         <NavDropdown.Item href="#action4">
                                             Another action
