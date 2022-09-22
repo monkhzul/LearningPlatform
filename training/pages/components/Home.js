@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <Layout>
             <Head>
-                <title>Home</title>
+                <title>Нүүр Хуудас</title>
             </Head>
 
                 <h2>Home Page</h2>

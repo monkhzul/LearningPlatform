@@ -34,7 +34,7 @@ export default function Courses(props) {
     return (
         <Layout className="">
             <Head>
-                <title>Courses</title>
+                <title>Сургалтууд</title>
             </Head>
 
         <div className={`${course.courseContent} flex p-3`}>
