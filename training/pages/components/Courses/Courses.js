@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import Layout from '../Layout/Layout'
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import course from '../../../styles/Course.module.css'
 import Link from 'next/link';
 import ReactPaginate from "react-paginate";
@@ -120,7 +119,7 @@ function AddCourseModal(props) {
                 <Form.Label>Сургалтын нэр</Form.Label>
                 <Form.Control type="text" placeholder="Enter email" />
                 <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
+                We will never share your email with anyone else.
                 </Form.Text>
             </Form.Group>
 

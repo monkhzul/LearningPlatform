@@ -19,7 +19,7 @@ export default function Home(props) {
                 <div className={`${style.categories} flex`}>
                     {data.map((data, i) =>
                         <div className={`${style.card} h-20 flex justify-center items-center`} key={i}>
-                            <p className='text-white text-center'>{data.title}</p>
+                            <p className='text-center'>{data.title}</p>
                         </div>
                     )}
                 </div>
