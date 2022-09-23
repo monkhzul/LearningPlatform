@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Login from './components/Login'
 import Footer from './components/Layout/Footer'
+import Script from 'next/script'
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
       </main>
 
       <Footer />
-      <script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></script>
+      <Script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></Script>
     </div>
   )
 }

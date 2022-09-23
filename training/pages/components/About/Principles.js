@@ -27,6 +27,7 @@ export default function Principles() {
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#4c4c4e] p-2`}>
                     <Image 
+                        alt='image'
                         src={star}
                         className={`p-4`}
                     />
@@ -42,6 +43,7 @@ export default function Principles() {
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#a7cf46] p-2`}>
                     <Image 
+                        alt='image'
                         src={thumbup}
                         className={`p-4`}
                     />
@@ -57,6 +59,7 @@ export default function Principles() {
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#ed2d5a] p-2`}>
                     <Image 
+                        alt='image'
                         src={hand}
                         className={`p-4`}
                     />
@@ -72,6 +75,7 @@ export default function Principles() {
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#9a2c56] p-2`}>
                     <Image 
+                        alt='image'
                         src={heart}
                         className={`p-4`}
                     />
@@ -87,6 +91,7 @@ export default function Principles() {
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#f58733] p-2`}>
                     <Image 
+                        alt='image'
                         src={light}
                         className={`p-4`}
                     />
@@ -102,6 +107,7 @@ export default function Principles() {
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#26ade3] p-2`}>
                     <Image 
+                        alt='image'
                         src={flag}
                         className={`p-4`}
                     />
@@ -117,6 +123,7 @@ export default function Principles() {
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#208d43] p-2`}>
                     <Image 
+                        alt='image'
                         src={flower}
                         className={`p-4`}
                     />
