@@ -47,7 +47,7 @@ export default function Courses(props) {
                         <legend className="text-[#2e3977] flex justify-center text-lg">Choose category</legend>
                         {data.map((data, i) =>
                             <div className="w-full pl-5 sm:w-1/2 md:w-1/3 xl:w-full" key={i}>
-                                <input type="checkbox" id="coding" name="interest" value="coding" />
+                                <input type="checkbox" id="coding" name="interest" value={data.title} />
                                 <label for="coding" className="mx-2">{data.title}</label>
                             </div>
                         )}
@@ -61,10 +61,10 @@ export default function Courses(props) {
                         <div className='bg-[#2e3977] text-white w-1/3 md:w-1/6 text-center py-2 ml-[5%] rounded-md cursor-pointer' onClick={() => setModalShow(true)}>
                             Сургалт нэмэх
                         </div>
-                            <AddCourseModal
-                                show={modalShow}
-                                onHide={() => setModalShow(false)}
-                            />
+                        <AddCourseModal
+                            show={modalShow}
+                            onHide={() => setModalShow(false)}
+                        />
                     </div>
                     <div className={`${course.cards}`}>
                         {display}
@@ -82,7 +82,6 @@ export default function Courses(props) {
                     />
                 </div>
             </div>
-
 
         </Layout>
     )
@@ -102,42 +101,42 @@ export const getServerSideProps = async (context) => {
 
 function AddCourseModal(props) {
     return (
-      <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Сургалт нэмэх
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='p-5'>
-          <Form>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Сургалтын нэр</Form.Label>
-                <Form.Control type="text" placeholder="Enter email" />
-                <Form.Text className="text-muted">
-                We will never share your email with anyone else.
-                </Form.Text>
-            </Form.Group>
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+                    Сургалт нэмэх
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body className='p-5'>
+                <Form>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Сургалтын нэр</Form.Label>
+                        <Form.Control type="text" placeholder="Enter email" />
+                        <Form.Text className="text-muted">
+                            We will never share your email with anyone else.
+                        </Form.Text>
+                    </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="text" placeholder="Password" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <div className=''>
-                <p className='bg-[#2e3977] text-white w-1/3 text-center py-2 rounded-lg m-auto'>Нэмэх</p>
-            </div>
-            </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.onHide} className="bg-slate-300">Close</Button>
-        </Modal.Footer>
-      </Modal>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Сургалтын төрөл</Form.Label>
+                        <Form.Control type="text" placeholder="Password" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="Check me out" />
+                    </Form.Group>
+                    <div className=''>
+                        <p className='bg-[#2e3977] text-white w-1/3 text-center py-2 rounded-lg m-auto'>Нэмэх</p>
+                    </div>
+                </Form>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button onClick={props.onHide} className="bg-slate-300">Close</Button>
+            </Modal.Footer>
+        </Modal>
     );
-  }
+}

@@ -84,10 +84,16 @@ input:hover {
   background-color: rgb(244, 244, 244);
 }
 
-input[type=password]:focus, input[type=text]:focus {
+.login input[type=password]:focus, .login input[type=text]:focus {
   border-left: 5px solid #841f47 !important;
   background-color: #fff;
   --tw-ring-color: none !important;
+}
+
+.form-control:focus {
+  border-color: #841f47 !important;
+  box-shadow: none !important;
+  border-left: 5px solid #841f47;
 }
 
 /**
@@ -185,5 +191,20 @@ input[type=checkbox]:focus {
   background-color: rgb(239, 239, 239) !important;
 }
 .btn:first-child:hover {
-  border-color: #2e3977 !important;
+  border-color: #2e3977;
+}
+.datepicker {
+  z-index: 100 !important;
+}
+
+.rs-sidenav-collapse-in {
+  width: 20% !important;
+}
+.rs-btn-icon.rs-btn > .rs-icon {
+  font-size: 35px !important;
+  color: #2e3977;
+}
+.rs-sidenav-default.rs-sidenav-collapse-in .rs-sidenav-item.rs-sidenav-item-active, .rs-sidenav-default .rs-dropdown-item.rs-dropdown-item-active, .rs-sidenav-default .rs-dropdown.rs-dropdown-selected-within .rs-sidenav-item-icon {
+  color: #841f47 !important;
+  font-weight: 600 !important;
 }
