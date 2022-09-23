@@ -181,3 +181,9 @@ input[type=checkbox]:focus {
 .nav-link {
   color: rgb(240, 234, 234) !important;
 }
+.navbar-toggler {
+  background-color: rgb(239, 239, 239) !important;
+}
+.btn:first-child:hover {
+  border-color: #2e3977 !important;
+}

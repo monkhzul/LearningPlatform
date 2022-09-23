@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className="z-10">
                 <div className='flex justify-between flex-col-reverse sm:flex-row my-2'>
-                    <Form className="d-flex mx-5">
+                    <Form className="d-flex mx-5 my-2">
                         <Form.Control
                             type="search"
                             placeholder="Search"
@@ -25,7 +25,7 @@ export default function Header() {
                         />
                         <div className="border-2 px-3 text-center flex items-center rounded-md hover:bg-[#2e3977] hover:text-gray-100">Search</div>
                     </Form>
-                    <Dropdown>
+                    <Dropdown className='my-2'>
                         <Dropdown.Toggle id="dropdown-button-dark-example1" className='mx-5'>
                             UserName
                         </Dropdown.Toggle>
