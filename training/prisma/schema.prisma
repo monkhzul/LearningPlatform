@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Hall {
+  id          Int       @id(map: "PK_Time2") @default(autoincrement())
+  time        Int?
+  leftStatus  Int?
+  rightStatus Int?
+  date        DateTime? @db.Date
+}
+
+model Time {
+  ID   Int     @id(map: "PK_Time") @default(autoincrement())
+  time Int?
+  name String? @db.NVarChar(50)
+}
+
+model UserReq {
+  id       Int       @id(map: "PK_UserReq") @default(autoincrement())
+  time     Int?
+  type     String?   @db.NVarChar(50)
+  date     DateTime? @db.DateTime
+  userId   Int?
+  userName String?   @db.NVarChar(50)
+  status   Int?
+  sysDate  DateTime? @db.DateTime
+}

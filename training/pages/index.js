@@ -3,8 +3,9 @@ import styles from '../styles/Home.module.css'
 import Login from './components/Login'
 import Footer from './components/Layout/Footer'
 import Script from 'next/script'
+import { userdb } from '../common/user'
 
-export default function Home() {
+export default function Home(props) {
   return (
     <div className={styles.container}>
       <Head>
@@ -20,7 +21,7 @@ export default function Home() {
         </h1>
 
         <div className={styles.grid}>
-          <Login />
+          <Login data = {props.user}/>
         </div>
       </main>
 
@@ -28,4 +29,15 @@ export default function Home() {
       <Script src="https://unpkg.com/@themesberg/flowbite@latest/dist/flowbite.bundle.js"></Script>
     </div>
   )
+}
+
+export const getServerSideProps = async (context) => {
+
+  const user = await userdb.$queryRaw`select * from users`;
+
+  return {
+      props: {
+          user: user
+      }
+  }
 }
