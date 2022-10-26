@@ -38,11 +38,11 @@ export default function Header() {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu variant="">
-                            <Dropdown.Item href="/components/Admin/Admin">Админ хуудас</Dropdown.Item>
+                            {/* <Dropdown.Item href="/components/Admin/Admin">Админ хуудас</Dropdown.Item>
                             <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                            <Dropdown.Divider />
-                            <Dropdown.Item href="/">Sign Out</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Something else</Dropdown.Item> */}
+                            {/* <Dropdown.Divider /> */}
+                                <Dropdown.Item href="/">Sign Out</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
