@@ -4,13 +4,23 @@ import DashboardIcon from '@rsuite/icons/legacy/Dashboard';
 import GroupIcon from '@rsuite/icons/legacy/Group';
 import MagicIcon from '@rsuite/icons/legacy/Magic';
 import GearCircleIcon from '@rsuite/icons/legacy/GearCircle';
+import Link from 'next/link';
 
 export default function SideNav() {
     const [activeKey, setActiveKey] = useState('1');
     const [expanded, setExpanded] = useState(true);
 
+    const NavLink = React.forwardRef((props, ref) => {
+        const { href, as, ...rest } = props;
+        return (
+            <Link href={href} as={as}>
+                <a ref={ref} {...rest} />
+            </Link>
+        );
+    });
+
     return (
-        <Sidenav expanded={expanded} defaultOpenKeys={['3', '4']}>
+        <Sidenav expanded={expanded} defaultOpenKeys={['3', '4']} className={``}>
             <Sidenav.Header>
                 <Sidenav.Toggle expanded={expanded} onToggle={expanded => setExpanded(expanded)} />
             </Sidenav.Header>
@@ -22,11 +32,9 @@ export default function SideNav() {
                     <Nav.Item eventKey="2" icon={<GroupIcon />}>
                         User Group
                     </Nav.Item>
-                    <Nav.Menu placement="rightStart" eventKey="3" title="Advanced" icon={<MagicIcon />}>
-                        <Nav.Item eventKey="3-1" href='/components/Admin/AddUser'>Хэрэглэгч нэмэх</Nav.Item>
-                        <Nav.Item eventKey="3-2">Devices</Nav.Item>
-                        <Nav.Item eventKey="3-3">Loyalty</Nav.Item>
-                        <Nav.Item eventKey="3-4">Visit Depth</Nav.Item>
+                    <Nav.Menu placement="rightStart" eventKey="3" title="Админ хуудас" icon={<MagicIcon />}>
+                        <Nav.Item eventKey="3-1" href='/components/Admin/AddUser' as={NavLink}>Хэрэглэгч нэмэх</Nav.Item>
+                        <Nav.Item eventKey="3-2" href='/components/Admin/AddCourse' as={NavLink}>Сургалт нэмэх</Nav.Item>
                     </Nav.Menu>
                     <Nav.Menu
                         placement="rightStart"

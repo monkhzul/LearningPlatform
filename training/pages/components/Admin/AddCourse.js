@@ -18,32 +18,32 @@ export default function AddUser() {
     <Layout>
       <Head>
         <title>
-          Хэрэглэгч нэмэх
+          Сургалт нэмэх
         </title>
       </Head>
       <div className='flex flex-col sm:flex-row justify-start h-screen'>
           <SideNav />
               <div className='w-full px-5 md:px-28 flex flex-col items-center'>
-                  <h3 className='my-10'>Хэрэглэгч нэмэх</h3>
+                  <h3 className='my-10'>Сургалт нэмэх</h3>
                   <Form className='flex flex-col sm:flex-row w-full'>
                         <Form.Group className="mb-3 w-full sm:w-1/2 p-1" controlId="formBasicEmail">
-                            <Form.Label>Овог</Form.Label>
-                            <Form.Control type="text" placeholder="Овог" />
+                            <Form.Label>Сургалтын нэр</Form.Label>
+                            <Form.Control type="text" placeholder="Сургалтын нэр" />
                         </Form.Group>
 
                         <Form.Group className="mb-3 w-full sm:w-1/2 p-1" controlId="formBasicPassword">
-                            <Form.Label>Нэр</Form.Label>
-                            <Form.Control type="text" placeholder="Нэр" />
+                            <Form.Label>Сургалтын төрөл</Form.Label>
+                            <Form.Control type="text" placeholder="Сургалтын төрөл" />
                         </Form.Group>
                     </Form>
                     <Form className='flex flex-col sm:flex-row w-full'>
                         <Form.Group className="mb-3 w-full sm:w-1/2 p-1" controlId="formBasicEmail">
-                            <Form.Label>ERP_Code</Form.Label>
-                            <Form.Control type="text" placeholder="ERP_Code" />
+                            <Form.Label>Сургалтын үргэлжлэх хугацаа</Form.Label>
+                            <Form.Control type="text" placeholder="Сургалтын үргэлжлэх хугацаа" />
                         </Form.Group>
 
                         <Form.Group className="mb-3 w-full sm:w-1/2 p-1" controlId="formBasicPassword">
-                            <Form.Label>Харьяалагдах хэлтэс</Form.Label>
+                            <Form.Label>Сургалтын түвшин (level)</Form.Label>
                             <Select
                                 className='select w-full'
                                 placeholder="Харьяалагдах хэлтэс..."
@@ -52,29 +52,30 @@ export default function AddUser() {
                     </Form>
                     <Form className='flex flex-col sm:flex-row w-full'>
                         <Form.Group className="mb-3 w-full sm:w-1/2 p-1" controlId="formBasicEmail">
-                            <Form.Label>Албан тушаал</Form.Label>
-                            <Form.Control type="text" placeholder="Албан тушаал" />
+                            <Form.Label>Training Type</Form.Label>
+                            <Select
+                                className='select w-full'
+                                placeholder="Training Type"
+                            />
                         </Form.Group>
 
                         <Form.Group className="mb-3 w-full sm:w-1/2 p-1" controlId="formBasicPassword">
-                            <Form.Label>Зэрэглэл</Form.Label>
+                            <Form.Label>Course Session Dates</Form.Label>
                             <Select
                                 className='select w-full'
-                                placeholder="Зэрэглэл..."
+                                placeholder="Course Session Dates"
                             />
                         </Form.Group>
                     </Form>
                     <Form className='flex flex-col sm:flex-row w-full'>
-                        <Form.Group className="mb-3 w-full sm:w-1/2 p-1" controlId="formBasicEmail">
-                            <Form.Label>Шууд удирдлага</Form.Label>
-                            <Select
-                                className='select w-full'
-                                placeholder="Шууд удирдлага..."
-                            />
-                        </Form.Group>
-
-                        <Form.Group className="mb-3 w-full sm:w-1/2 p-1 flex flex-col" controlId="formBasicPassword">
-                            <Form.Label>Ажилд орсон огноо</Form.Label>
+                        <div className='w-full sm:w-1/2'>
+                          <div className='w-full flex flex-col'>
+                            <Form.Label>Бичлэг оруулах</Form.Label>
+                            <input type={"file"} className="border rounded-md" />
+                          </div>
+                        </div>
+                        <Form.Group className="mb-3 w-full sm:w-1/2 p-1 flex flex-col mx-auto" controlId="formBasicPassword">
+                            <Form.Label>Эхлэх хугацаа</Form.Label>
                             <DatePicker
                                 className={`border rounded-md text-sm ${admin.datepicker}`}
                                 selected={chooseDate}
@@ -84,7 +85,7 @@ export default function AddUser() {
                             />
                         </Form.Group>
                     </Form>
-                    <div className='mb-5'>
+                    <div className='my-4'>
                         <p className='bg-[#2e3977] text-white text-center py-2 px-5 rounded-lg m-auto'>Нэмэх</p>
                     </div>
               </div>

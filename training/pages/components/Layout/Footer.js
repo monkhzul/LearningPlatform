@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
 import styles from '../../../styles/Home.module.css'
-import mcs from '../../../images/mcs.jpg'
 
 export default function Footer() {
     return (
@@ -14,7 +13,7 @@ export default function Footer() {
             >
                 <span className={`${styles.logo} flex items-center`}>
                     <Image
-                        src={mcs}
+                        src={'/images/mcs.jpg'}
                         width={120}
                         height={50}
                     />

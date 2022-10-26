@@ -6,8 +6,6 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Select from 'react-select';
 import DatePicker from "react-datepicker";
-import "rsuite/dist/rsuite.css";
-import "react-datepicker/dist/react-datepicker.css";
 import admin from '../../../styles/Admin.module.css';
 import Sidenav from './SideNav';
 

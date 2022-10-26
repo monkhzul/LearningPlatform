@@ -67,14 +67,14 @@ input, .button {
 }
 
 .login input[type=text] {
-  background-image: url('../images/user.png');
+  background-image: url('/images/user.png');
   background-repeat: no-repeat;
   background-size: 24px;
   background-position: 16px center;
 }
 
 .login input[type=password] {
-  background-image: url('../images/lock.png');
+  background-image: url('/images/lock.png');
   background-repeat: no-repeat;
   background-size: 24px;
   background-position: 16px center;
@@ -207,4 +207,22 @@ input[type=checkbox]:focus {
 .rs-sidenav-default.rs-sidenav-collapse-in .rs-sidenav-item.rs-sidenav-item-active, .rs-sidenav-default .rs-dropdown-item.rs-dropdown-item-active, .rs-sidenav-default .rs-dropdown.rs-dropdown-selected-within .rs-sidenav-item-icon {
   color: #841f47 !important;
   font-weight: 600 !important;
+}
+.form-control::placeholder {
+  font-size: smaller;
+}
+.css-14el2xx-placeholder, .Admin_datepicker__sJ7UJ {
+  font-size: smaller !important;
+}
+
+@media (max-width: 639px) {
+  .rs-sidenav-collapse-in {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 639px) and (max-width: 1024px) {
+  .rs-sidenav-collapse-in {
+    width: 50% !important;
+  }
 }

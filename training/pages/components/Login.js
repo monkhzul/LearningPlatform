@@ -46,7 +46,7 @@ export default function Login(users) {
                         sessionStorage.setItem("userId", user[0].erp_code)
                         
                             router.push({
-                                pathname: '/components/Courses/Courses'
+                                pathname: '/components/User/Home'
                             })
                     }
                 }

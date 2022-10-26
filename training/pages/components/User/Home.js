@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
-import Layout from './Layout/Layout'
+import Layout from '../Layout/Layout'
 import style from '../../styles/Home.module.css'
 import Image from 'next/image'
 

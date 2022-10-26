@@ -1,9 +1,5 @@
-import React from 'react'
-import Link from 'next/link'
+import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
-import styles from '../../../styles/Home.module.css'
-import user from '../../../images/svg/user.svg'
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -12,10 +8,20 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 export default function Header() {
+
+    const [username, setUsername] = useState('');
+    const [erp, setErp] = useState('');
+
+    useEffect(() => {
+        setUsername(sessionStorage.getItem('user'))
+        setErp(sessionStorage.getItem('userId'))
+    }, [])
     
   return (
-    <header className="z-10">
+    <header className="">
                 <div className='flex justify-between flex-col-reverse sm:flex-row my-2'>
+                    <div className='flex mx-5'>
+                    <Image src={'/images/getsitelogo.png'} width={50} height={50} />
                     <Form className="d-flex mx-5 my-2">
                         <Form.Control
                             type="search"
@@ -25,9 +31,10 @@ export default function Header() {
                         />
                         <div className="border-2 px-3 text-center flex items-center rounded-md hover:bg-[#2e3977] hover:text-gray-100">Search</div>
                     </Form>
+                    </div>
                     <Dropdown className='my-2'>
-                        <Dropdown.Toggle id="dropdown-button-dark-example1" className='mx-5'>
-                            UserName
+                        <Dropdown.Toggle id="dropdown-button-dark-example1" className='mx-3'>
+                            {username}
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu variant="">
@@ -41,23 +48,21 @@ export default function Header() {
                 </div>
 
                 <div className='user w-full'>
+                    
                     <Navbar bg="dark" expand="md">
                         <Container fluid>
                             <Navbar.Brand href="/components/Home" className='mx-5 font-bold'>М-Си-Эс Академи</Navbar.Brand>
                             <Navbar.Toggle aria-controls="navbarScroll" />
                             <Navbar.Collapse id="navbarScroll">
                                 <Nav
-                                    className="me-auto my-2 my-lg-0 w-full flex justify-center text-lg flex-wrap navMenu"
+                                    className="me-auto my-2 my-lg-0 w-full flex justify-center text-md flex-wrap navMenu"
                                     navbarScroll
                                 >
                                     <NavDropdown title="Бидний тухай" id="navbarScrollingDropdown" menuVariant="dark">
-                                        <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                                        <NavDropdown.Item href="/components/About/Principles">
-                                            Үнэт зүйл, Баритмлах зарчим
-                                        </NavDropdown.Item>
+                                        <NavDropdown.Item href="/components/About/Principles">Бидний тухай</NavDropdown.Item>
                                         <NavDropdown.Divider />
                                         <NavDropdown.Item href="#action5">
-                                            Something else here
+                                            Түгээмэл асуулт, хариулт
                                         </NavDropdown.Item>
                                     </NavDropdown>
                                     <NavDropdown title="Сургалтын мэдээлэл" id="navbarScrollingDropdown" menuVariant="dark">

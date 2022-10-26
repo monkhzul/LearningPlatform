@@ -1,15 +1,8 @@
 import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import flag from '../../../images/principle/flag.png'
-import flower from '../../../images/principle/flower.png'
-import hand from '../../../images/principle/hand.png'
-import heart from '../../../images/principle/heart.png'
-import light from '../../../images/principle/light.png'
-import star from '../../../images/principle/star.png'
-import thumbup from '../../../images/principle/thumbup.png'
 import Layout from '../Layout/Layout'
-import principle from '../../../styles/Principles.module.css'
+import principle from '/styles/Principles.module.css'
 
 export default function Principles() {
   return (
@@ -26,9 +19,11 @@ export default function Principles() {
             <div className={`${principle.principles} w-full md:w-[45%] xl:w-[30%] flex justify-center items-center p-2 my-4 mx-3`}>
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#4c4c4e] p-2`}>
-                    <Image 
+                    <Image
+                        width={100}
+                        height={100} 
                         alt='image'
-                        src={star}
+                        src={'/images/principle/star.png'}
                         className={`p-4`}
                     />
                     </div>
@@ -42,9 +37,11 @@ export default function Principles() {
             <div className={`${principle.principles} w-full md:w-[45%] xl:w-[30%] flex justify-center items-center p-2 my-4 mx-3`}>
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#a7cf46] p-2`}>
-                    <Image 
+                    <Image
+                        width={100}
+                        height={100} 
                         alt='image'
-                        src={thumbup}
+                        src={'/images/principle/thumbup.png'}
                         className={`p-4`}
                     />
                     </div>
@@ -58,9 +55,11 @@ export default function Principles() {
             <div className={`${principle.principles} w-full md:w-[45%] xl:w-[30%] flex justify-center items-center p-2 my-4 mx-3`}>
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#ed2d5a] p-2`}>
-                    <Image 
+                    <Image
+                        width={100}
+                        height={100} 
                         alt='image'
-                        src={hand}
+                        src={'/images/principle/hand.png'}
                         className={`p-4`}
                     />
                     </div>
@@ -74,9 +73,11 @@ export default function Principles() {
             <div className={`${principle.principles} w-full md:w-[45%] xl:w-[30%] flex justify-center items-center p-2 my-4 mx-3`}>
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#9a2c56] p-2`}>
-                    <Image 
+                    <Image
+                        width={100}
+                        height={100} 
                         alt='image'
-                        src={heart}
+                        src={'/images/principle/heart.png'}
                         className={`p-4`}
                     />
                     </div>
@@ -90,9 +91,11 @@ export default function Principles() {
             <div className={`${principle.principles} w-full md:w-[45%] xl:w-[30%] flex justify-center items-center p-2 my-4 mx-3`}>
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#f58733] p-2`}>
-                    <Image 
+                    <Image
+                        width={100}
+                        height={100} 
                         alt='image'
-                        src={light}
+                        src={'/images/principle/light.png'}
                         className={`p-4`}
                     />
                     </div>
@@ -106,9 +109,11 @@ export default function Principles() {
             <div className={`${principle.principles} w-full md:w-[45%] xl:w-[30%] flex justify-center items-center p-2 my-4 mx-3`}>
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#26ade3] p-2`}>
-                    <Image 
+                    <Image
+                        width={100}
+                        height={100} 
                         alt='image'
-                        src={flag}
+                        src={'/images/principle/flag.png'}
                         className={`p-4`}
                     />
                     </div>
@@ -122,9 +127,11 @@ export default function Principles() {
             <div className={`${principle.principles} w-full md:w-[45%] xl:w-[30%] flex justify-center items-center p-2 my-4 mx-3`}>
                 <div className={`border`}>
                     <div className={`${principle.image} bg-[#208d43] p-2`}>
-                    <Image 
+                    <Image
+                        width={100}
+                        height={100} 
                         alt='image'
-                        src={flower}
+                        src={'/images/principle/flower.png'}
                         className={`p-4`}
                     />
                     </div>
