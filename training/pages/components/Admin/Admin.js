@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Layout from '../Layout/Layout'
 import Modal from 'react-bootstrap/Modal';
@@ -17,7 +17,13 @@ export default function Admin() {
     var firstDay = new Date(date.getFullYear(), date.getMonth(), date.getDate());
     const [chooseDate, setChooseDate] = useState(firstDay);
 
-    console.log(chooseDate);
+    const [username, setUsername] = useState('');
+    const [erp, setErp] = useState('');
+
+    useEffect(() => {
+        setUsername(sessionStorage.getItem('user'))
+        setErp(sessionStorage.getItem('userId'))
+    }, [])
 
     return (
         <Layout>
