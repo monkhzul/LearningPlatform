@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Layout from '../Layout/Layout'
-import Button from 'react-bootstrap/Button';
 import course from '../../../styles/Course.module.css'
 import Link from 'next/link';
 import ReactPaginate from "react-paginate";
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
+import { useRouter } from 'next/router'
 
 export default function Courses(props) {
+    const router = useRouter();
     const [data, setData] = useState(props.db.products);
     const [pageNumber, setPageNumber] = useState(0);
     const perPage = 8;
@@ -21,9 +20,18 @@ export default function Courses(props) {
         const [checkCategory, setcheckCategory] = useState([])
         const [filteredData, setFilteredData] = useState([])
 
+        function filterData(filters) {
+            const filtered = []
+            filters.forEach(filterValue => {
+                filtered.push(...data.filter(val => val.title.includes(filterValue)));
+            });
+            setFilteredData(filtered)
+        }
+
         const handleChange = (e) => {
             const value = e.target.value
             const checked = e.target.checked
+
             if (checked) {
                 setcheckCategory([
                     ...checkCategory, value
@@ -33,54 +41,21 @@ export default function Courses(props) {
                     e !== value
                 )))
             }
-            filterData(checkCategory)
+            
+                // filterData(checkCategory.length == 0 ? checkCategory[0] : checkCategory)
+                console.log(checkCategory)
         }
 
-        function filterData(filters) {
-            const filtered = []
-            filters.forEach(filterValue => {
-                filtered.push(...data.filter(val => val.title.includes(filterValue)));
-            });
-            setFilteredData(filtered)
-        }
-
-        // setTimeout(() => {
-        //     filterData(checkCategory)
-        // }, 100);
-
-        console.log(filteredData)
         const pageCount = Math.ceil(filteredData.length === 0 ? data.length / perPage : checkCategory.length / perPage);
 
-        const display = filteredData.length === 0 ? data.slice(pagesVisited, pagesVisited + perPage)
-        .map((data, i) =>
-            <div className={`${course.cardBody} border`} key={i}>
-                <h5 className="mx-auto">{data.title}</h5>
-                <div className={`${course.cardContent}`}>
-                    {data.description}
-                </div>
-                <div className={`${course.cardFooter}`}>
-                    <Link href="/" className={`${course.cardLink} my-auto bg-gray-300 py-1 px-4`}>View Course</Link>
-                </div>
-            </div>
-        ) 
-        : filteredData.slice(pagesVisited, pagesVisited + perPage)
-        .map((data, i) =>
-            <div className={`${course.cardBody} border`} key={i}>
-                <h5 className="mx-auto">{data.title}</h5>
-                <div className={`${course.cardContent}`}>
-                    {data.description}
-                </div>
-                <div className={`${course.cardFooter}`}>
-                    <Link href="/" className={`${course.cardLink} my-auto bg-gray-300 py-1 px-4`}>View Course</Link>
-                </div>
-            </div>
-        )
+        console.log(filteredData)
+    
 
     return (
         <Layout className="">
             <Head>
                 <title>Сургалтууд</title>
-                <link rel="icon" href="/mcsstar.png" />
+                <link rel="icon" href="/images/getsitelogo.png" />
             </Head>
 
             <div className={`${course.courseContent} flex p-3`}>
@@ -101,7 +76,32 @@ export default function Courses(props) {
                             <h5 className="flex justify-center text-[#2e3977] my-3">Сургалтууд</h5>
                         </div>
                         <div className={`${course.cards}`}>
-                            {display}
+                            {
+                                checkCategory.length === 0 ? data.slice(pagesVisited, pagesVisited + perPage)
+                                .map((data, i) =>
+                                    <div className={`${course.cardBody} border`} key={i}>
+                                        <h5 className="mx-auto">{data.title}</h5>
+                                        <div className={`${course.cardContent}`}>
+                                            {data.description}
+                                        </div>
+                                        <div className={`${course.cardFooter}`}>
+                                            <Link href="/" className={`${course.cardLink} my-auto bg-gray-300 py-1 px-4`}>View Course</Link>
+                                        </div>
+                                    </div>
+                                ) 
+                                : filteredData.slice(pagesVisited, pagesVisited + perPage)
+                                .map((data, i) =>
+                                    <div className={`${course.cardBody} border`} key={i}>
+                                        <h5 className="mx-auto">{data.title}</h5>
+                                        <div className={`${course.cardContent}`}>
+                                            {data.description}
+                                        </div>
+                                        <div className={`${course.cardFooter}`}>
+                                            <Link href="/" className={`${course.cardLink} my-auto bg-gray-300 py-1 px-4`}>View Course</Link>
+                                        </div>
+                                    </div>
+                                )
+                            }
                         </div>
                     </div>
                     <div className=''>

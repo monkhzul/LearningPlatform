@@ -11,51 +11,55 @@ export default function Login(users) {
     const user = [];
     const router = useRouter();
 
-    async function Login() {
-
-        for (var i in data) {
-            if (data[i].erp_code === username && data[i].password === password) {
-                user.push({
-                    erp_code: data[i].erp_code,
-                    lastname: data[i].lastname,
-                    firstname: data[i].firstname,
-                    password: data[i].password
-                })
-            }
-        }
-
-        if (username === '' || password === '') {
-            toast("Хоосон байна шдээ. Бөглөөчэээ")
-        } else {
-            if (user.length == 0) {
-                toast("Аль нэг талбар буруу л байна даа")
-            }
-            else {
-                if (user[0].erp_code === username && user[0].password === password) {
-                    if (user[0].erp_code === '101869') {
-                        toast("Амжилттай нэвтэрлээ. Түр хүлээж байгаарай!")
-                        sessionStorage.setItem("user", user[0].firstname)
-                        sessionStorage.setItem("userId", user[0].erp_code)
-                        
-                            router.push({
-                                pathname: '/components/Admin/Admin'
-                            })
-                    } else {
-                        toast("Амжилттай нэвтэрлээ. Түр хүлээж байгаарай!")
-                        sessionStorage.setItem("user", user[0].firstname)
-                        sessionStorage.setItem("userId", user[0].erp_code)
-                        
-                            router.push({
-                                pathname: '/components/User/Home'
-                            })
-                    }
-                }
-                else {
-                    toast("Өөөө. Зөв бөглөөчээээ")
-                }
-            }
-        }
+    function Login() {
+        router.push('/components/User/Home')
     }
+
+    // async function Login() {
+
+    //     for (var i in data) {
+    //         if (data[i].erp_code === username && data[i].password === password) {
+    //             user.push({
+    //                 erp_code: data[i].erp_code,
+    //                 lastname: data[i].lastname,
+    //                 firstname: data[i].firstname,
+    //                 password: data[i].password
+    //             })
+    //         }
+    //     }
+
+    //     if (username === '' || password === '') {
+    //         toast("Хоосон байна шдээ. Бөглөөчэээ")
+    //     } else {
+    //         if (user.length == 0) {
+    //             toast("Аль нэг талбар буруу л байна даа")
+    //         }
+    //         else {
+    //             if (user[0].erp_code === username && user[0].password === password) {
+    //                 if (user[0].erp_code === '101869') {
+    //                     toast("Амжилттай нэвтэрлээ. Түр хүлээж байгаарай!")
+    //                     sessionStorage.setItem("user", user[0].firstname)
+    //                     sessionStorage.setItem("userId", user[0].erp_code)
+                        
+    //                         router.push({
+    //                             pathname: '/components/Admin/Admin'
+    //                         })
+    //                 } else {
+    //                     toast("Амжилттай нэвтэрлээ. Түр хүлээж байгаарай!")
+    //                     sessionStorage.setItem("user", user[0].firstname)
+    //                     sessionStorage.setItem("userId", user[0].erp_code)
+                        
+    //                         router.push({
+    //                             pathname: '/components/User/Home'
+    //                         })
+    //                 }
+    //             }
+    //             else {
+    //                 toast("Өөөө. Зөв бөглөөчээээ")
+    //             }
+    //         }
+    //     }
+    // }
 
   return (
     <div className='w-full md:w-1/2 xl:w-1/3 login'>
