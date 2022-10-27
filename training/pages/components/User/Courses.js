@@ -58,9 +58,9 @@ export default function Courses(props) {
                         <h5 className="flex justify-center text-[#2e3977] my-3">Сургалтууд</h5>
                     </div>
                     <div className='my-3'>
-                        <div className='bg-[#2e3977] text-white w-1/3 md:w-1/6 text-center py-2 ml-[5%] rounded-md cursor-pointer' onClick={() => setModalShow(true)}>
+                        {/* <div className='bg-[#2e3977] text-white w-1/3 md:w-1/6 text-center py-2 ml-[5%] rounded-md cursor-pointer' onClick={() => setModalShow(true)}>
                             Сургалт нэмэх
-                        </div>
+                        </div> */}
                         <AddCourseModal
                             show={modalShow}
                             onHide={() => setModalShow(false)}

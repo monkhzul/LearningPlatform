@@ -20,9 +20,9 @@ export default function Header() {
   return (
     <header className="">
                 <div className='flex justify-between flex-col-reverse sm:flex-row my-2'>
-                    <div className='flex mx-5'>
-                    <Image src={'/images/getsitelogo.png'} width={50} height={50} />
-                    <Form className="d-flex mx-5 my-2">
+                    <div className='flex w-full px-3 sm:px-5 justify-between sm:justify-start'>
+                    <Image src={'/images/getsitelogo.png'} width={50} height={50} className="" />
+                    <Form className="flex mx-3 sm:mx-5 my-2">
                         <Form.Control
                             type="search"
                             placeholder="Search"
@@ -32,7 +32,7 @@ export default function Header() {
                         <div className="border-2 px-3 text-center flex items-center rounded-md hover:bg-[#2e3977] hover:text-gray-100">Search</div>
                     </Form>
                     </div>
-                    <Dropdown className='my-2'>
+                    <Dropdown className='my-2 flex justify-end'>
                         <Dropdown.Toggle id="dropdown-button-dark-example1" className='mx-3'>
                             {username}
                         </Dropdown.Toggle>
@@ -66,7 +66,7 @@ export default function Header() {
                                         </NavDropdown.Item>
                                     </NavDropdown>
                                     <NavDropdown title="Сургалтын мэдээлэл" id="navbarScrollingDropdown" menuVariant="dark">
-                                        <NavDropdown.Item href="/components/Courses/Courses">Сургалтууд</NavDropdown.Item>
+                                        <NavDropdown.Item href="/components/User/Courses">Сургалтууд</NavDropdown.Item>
                                         <NavDropdown.Item href="#action4">
                                             Сургалтын хуваарь
                                         </NavDropdown.Item>
