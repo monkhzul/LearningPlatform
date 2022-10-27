@@ -51,7 +51,7 @@ export default function Header() {
                     
                     <Navbar bg="dark" expand="md">
                         <Container fluid>
-                            <Navbar.Brand href="/components/Home" className='mx-5 font-bold'>М-Си-Эс Академи</Navbar.Brand>
+                            <Navbar.Brand href="/components/User/Home" className='mx-5 font-bold'>М-Си-Эс Академи</Navbar.Brand>
                             <Navbar.Toggle aria-controls="navbarScroll" />
                             <Navbar.Collapse id="navbarScroll">
                                 <Nav

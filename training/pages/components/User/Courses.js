@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Layout from '../Layout/Layout'
 import Button from 'react-bootstrap/Button';
@@ -13,15 +13,57 @@ export default function Courses(props) {
     const [pageNumber, setPageNumber] = useState(0);
     const perPage = 8;
     const pagesVisited = pageNumber * perPage;
-    const pageCount = Math.ceil(data.length / perPage);
-
-    const [modalShow, setModalShow] = useState(false);
 
     const changePage = ({ selected }) => {
         setPageNumber(selected)
     }
 
-    const display = data.slice(pagesVisited, pagesVisited + perPage)
+        const [checkCategory, setcheckCategory] = useState([])
+        const [filteredData, setFilteredData] = useState([])
+
+        const handleChange = (e) => {
+            const value = e.target.value
+            const checked = e.target.checked
+            if (checked) {
+                setcheckCategory([
+                    ...checkCategory, value
+                ])
+            } else {
+                setcheckCategory(checkCategory.filter((e) => (
+                    e !== value
+                )))
+            }
+            filterData(checkCategory)
+        }
+
+        function filterData(filters) {
+            const filtered = []
+            filters.forEach(filterValue => {
+                filtered.push(...data.filter(val => val.title.includes(filterValue)));
+            });
+            setFilteredData(filtered)
+        }
+
+        // setTimeout(() => {
+        //     filterData(checkCategory)
+        // }, 100);
+
+        console.log(filteredData)
+        const pageCount = Math.ceil(filteredData.length === 0 ? data.length / perPage : checkCategory.length / perPage);
+
+        const display = filteredData.length === 0 ? data.slice(pagesVisited, pagesVisited + perPage)
+        .map((data, i) =>
+            <div className={`${course.cardBody} border`} key={i}>
+                <h5 className="mx-auto">{data.title}</h5>
+                <div className={`${course.cardContent}`}>
+                    {data.description}
+                </div>
+                <div className={`${course.cardFooter}`}>
+                    <Link href="/" className={`${course.cardLink} my-auto bg-gray-300 py-1 px-4`}>View Course</Link>
+                </div>
+            </div>
+        ) 
+        : filteredData.slice(pagesVisited, pagesVisited + perPage)
         .map((data, i) =>
             <div className={`${course.cardBody} border`} key={i}>
                 <h5 className="mx-auto">{data.title}</h5>
@@ -46,40 +88,35 @@ export default function Courses(props) {
                     <fieldset className="flex flex-row flex-wrap overflow-auto">
                         <legend className="text-[#2e3977] flex justify-center text-lg">Choose category</legend>
                         {data.map((data, i) =>
-                            <div className="w-full pl-5 sm:w-1/2 md:w-1/3 xl:w-full" key={i}>
-                                <input type="checkbox" id="coding" name="interest" value={data.title} />
+                            <form className="w-full pl-5 sm:w-1/2 md:w-1/3 xl:w-full" key={i} id="check">
+                                <input type="checkbox" name="category" className='checkbox' value={data.title} onChange={handleChange}/>
                                 <label for="coding" className="mx-2">{data.title}</label>
-                            </div>
+                            </form>
                         )}
                     </fieldset>
                 </div>
                 <div className={`flex flex-col ${course.Courses}`}>
-                    <div className="courses">
-                        <h5 className="flex justify-center text-[#2e3977] my-3">Сургалтууд</h5>
+                    <div className={`${course.courseCards}`}>
+                        <div className="">
+                            <h5 className="flex justify-center text-[#2e3977] my-3">Сургалтууд</h5>
+                        </div>
+                        <div className={`${course.cards}`}>
+                            {display}
+                        </div>
                     </div>
-                    <div className='my-3'>
-                        {/* <div className='bg-[#2e3977] text-white w-1/3 md:w-1/6 text-center py-2 ml-[5%] rounded-md cursor-pointer' onClick={() => setModalShow(true)}>
-                            Сургалт нэмэх
-                        </div> */}
-                        <AddCourseModal
-                            show={modalShow}
-                            onHide={() => setModalShow(false)}
+                    <div className=''>
+                        <ReactPaginate
+                            previousLabel={"Previous"}
+                            nextLabel={"Next"}
+                            pageCount={pageCount}
+                            onPageChange={changePage}
+                            containerClassName={"paginationBttns"}
+                            previousLinkClassName={"previousBttn"}
+                            nextLinkClassName={"nextBttn"}
+                            disabledClassName={"paginationDisabled"}
+                            activeClassName={"paginationActive"}
                         />
                     </div>
-                    <div className={`${course.cards}`}>
-                        {display}
-                    </div>
-                    <ReactPaginate
-                        previousLabel={"Previous"}
-                        nextLabel={"Next"}
-                        pageCount={pageCount}
-                        onPageChange={changePage}
-                        containerClassName={"paginationBttns"}
-                        previousLinkClassName={"previousBttn"}
-                        nextLinkClassName={"nextBttn"}
-                        disabledClassName={"paginationDisabled"}
-                        activeClassName={"paginationActive"}
-                    />
                 </div>
             </div>
 
@@ -97,46 +134,4 @@ export const getServerSideProps = async (context) => {
             db
         }
     }
-}
-
-function AddCourseModal(props) {
-    return (
-        <Modal
-            {...props}
-            size="lg"
-            aria-labelledby="contained-modal-title-vcenter"
-            centered
-        >
-            <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
-                    Сургалт нэмэх
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body className='p-5'>
-                <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Сургалтын нэр</Form.Label>
-                        <Form.Control type="text" placeholder="Enter email" />
-                        <Form.Text className="text-muted">
-                            We will never share your email with anyone else.
-                        </Form.Text>
-                    </Form.Group>
-
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Сургалтын төрөл</Form.Label>
-                        <Form.Control type="text" placeholder="Password" />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
-                    <div className=''>
-                        <p className='bg-[#2e3977] text-white w-1/3 text-center py-2 rounded-lg m-auto'>Нэмэх</p>
-                    </div>
-                </Form>
-            </Modal.Body>
-            <Modal.Footer>
-                <Button onClick={props.onHide} className="bg-slate-300">Close</Button>
-            </Modal.Footer>
-        </Modal>
-    );
 }

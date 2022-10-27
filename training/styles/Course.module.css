@@ -42,6 +42,13 @@
     height: 100vh;
     overflow: auto;
 }
+.Courses {
+    width: 100%;
+}
+.courseCards {
+    height: 60vh;
+    overflow: auto;
+}
 @media (max-width: 640px) {
     .cardBody {
         width: 90%;
